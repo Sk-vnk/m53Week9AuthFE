@@ -3,7 +3,7 @@ import {useState} from 'react'
 import { testFetch, loginFetch } from "../../utils/fetch";
 
 
-const Login = () => {
+const Login = ({ setLoggedIn }) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -13,9 +13,12 @@ const Login = () => {
     };
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        loginFetch(username, password);
+
+       const data = await loginFetch(username, password);
+        console.log(data);
+        await setLoggedIn(datauser);
     };
 
 
