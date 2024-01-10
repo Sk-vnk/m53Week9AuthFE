@@ -2,11 +2,14 @@ import React from 'react'
 
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ loggedIn }) => {
   return (
   <div className="header-wrapper">
     <div className="header-inner-container">
-    <h1 className="header-title">Awesome Header</h1>
+      {loggedIn ? <h1 className="header-title">{`hello ${loggedIn.username}`}</h1>
+    : (
+    <h1 className="header-title">Awesome header</h1>
+    )}
     </div>
     </div>
   );

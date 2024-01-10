@@ -26,7 +26,8 @@ const Signup = () => {
             <h3 className="signup-title">Sign Up</h3>
             <form onSubmit={(e) => handleSubmit(e)}>
             <input
-            className="signup-input" placeholder="Username"
+            className="signup-input"
+            placeholder="Username"
             onChange={(event) => changeHandler(event, setUsername, username)}
             />
             <input 
